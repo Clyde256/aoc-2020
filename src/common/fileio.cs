@@ -1,0 +1,68 @@
+using System.IO;
+using System.Collections.Generic;
+
+namespace AOC
+{
+    public class FileIO
+    {
+        public string FilePath { get; private set; }
+
+        private FileIO(string filePath)
+        {
+            FilePath = filePath;
+        }
+
+        public static FileIO Create(string filePath)
+        {
+            var exist = File.Exists(filePath);
+            
+            if (!exist)
+            {
+                File.Create(filePath).Dispose();
+                exist = File.Exists(filePath);
+                if (!exist) return null;
+            }
+
+            return new FileIO(filePath);
+        }
+
+        public static FileIO CreateProjFilePath(string projFilePath)
+        {
+            var filePath = InputPath.ForExe(projFilePath);
+            return Create(filePath);
+        }
+
+        public List<string> ReadAll()
+        {
+            var list = new List<string>();
+
+            using StreamReader sr = File.OpenText(FilePath);
+            
+            string line = "";
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                list.Add(line);
+            }
+
+            return list;
+        }
+
+        public List<int> ReadAllInt()
+        {
+            var list = new List<int>();
+
+            using StreamReader sr = File.OpenText(FilePath);
+            
+            string line = "";
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                var val = System.Int32.Parse(line);
+                list.Add(val);
+            }
+
+            return list;
+        }
+    }
+}
