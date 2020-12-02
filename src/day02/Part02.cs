@@ -1,9 +1,9 @@
 using System;
 using AOC.Tools;
 
-namespace AOC
+namespace AOC.Day02
 {
-    public static class Day02Part02
+    public static class Part02
     {
         private static bool CheckPassword(string passwordLine)
         {

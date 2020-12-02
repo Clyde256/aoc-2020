@@ -1,9 +1,9 @@
 using System;
 using AOC.Tools;
 
-namespace AOC
+namespace AOC.Day01
 {
-    public static class Day01Part01
+    public static class Part01
     {
         public static void Run()
         {
