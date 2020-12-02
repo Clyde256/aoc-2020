@@ -1,7 +1,7 @@
 using System.IO;
 using System.Collections.Generic;
 
-namespace AOC
+namespace AOC.Tools
 {
     public class FileIO
     {

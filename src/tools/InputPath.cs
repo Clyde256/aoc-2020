@@ -1,7 +1,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace AOC
+namespace AOC.Tools
 {
     public static class InputPath
     {

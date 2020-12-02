@@ -6,7 +6,7 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            Quest1B.Run();
+            Day02Part02.Run();
         }
     }
 }
