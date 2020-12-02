@@ -7,7 +7,7 @@ namespace AOC.Day01
     {
         public static void Run()
         {
-            var reader = FileIO.CreateProjFilePath("./day_01/input.txt");
+            var reader = FileIO.CreateProjFilePath("./day01/input.txt");
             var list = reader.ReadAllInt();
             
             foreach(var it in list)

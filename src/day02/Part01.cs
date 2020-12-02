@@ -26,7 +26,7 @@ namespace AOC.Day02
 
         public static void Run()
         {
-            var reader = FileIO.CreateProjFilePath("./day_02/input.txt");
+            var reader = FileIO.CreateProjFilePath("./day02/input.txt");
             var list = reader.ReadAll();
             
             int cnt = 0;
