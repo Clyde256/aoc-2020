@@ -1,0 +1,52 @@
+namespace AOC.Tools
+{
+    public class Map2D
+    {
+        private char[,] _map = null;
+
+        public void Load(string filePath)
+        {
+            var reader = FileIO.CreateProjFilePath(filePath);
+            var list = reader.ReadAll();
+            if (list.Count <= 0) return;
+
+            _map = new char[list.Count, list[0].Length];
+
+            for (var iRow = 0; iRow < list.Count; iRow++) 
+            {
+                for (var iCol = 0; iCol < list[iRow].Length; iCol++)
+                {
+                    _map[iRow, iCol] = list[iRow][iCol];
+                }
+            }
+        }
+
+        public void Print() 
+        {
+            if (_map == null) return;
+
+            var row = _map.GetLength(1);
+            var col = _map.GetLength(1);
+
+            for (var iRow = 0; iRow < row; iRow++)
+            {
+                for (var iCol = 0; iCol < col; iCol++)
+                {
+                    System.Console.Write(_map[iRow, iCol]);
+                }
+                System.Console.Write("\n");
+            }
+        }
+
+        public int Rows { get { return _map.GetLength(0); } }
+        public int Cols { get { return _map.GetLength(1); } }
+
+        public char Value(int y, int x) 
+        {
+            if (y >= Rows) y = y % Rows;
+            if (x >= Cols) x = x % Cols;
+
+            return _map[y, x];
+        }
+    }
+}
