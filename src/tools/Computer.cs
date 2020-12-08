@@ -90,8 +90,8 @@ namespace AOC.Tools
         {
             for (var i = 0; i < _program.Count; i++)
             {
-                var instr = _program[i].Split(" ");
-                if (instr[0] != "jmp" && instr[0] != "nop") continue;
+                var instr = _program[i].Split(" ")[0];
+                if (instr != "jmp" && instr != "nop") continue;
 
                 var modifProg = ProgramCopy();
                 
