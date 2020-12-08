@@ -1,8 +1,4 @@
 using System;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using AOC.Tools;
 
 namespace AOC.Day08
@@ -17,7 +13,7 @@ namespace AOC.Day08
             comp.Load(relPath);
 
             var res = comp.FindBug();
-            
+
             Console.WriteLine(res);
             Console.WriteLine(comp.Accumulator);
         }

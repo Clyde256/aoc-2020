@@ -1,8 +1,4 @@
 using System;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using AOC.Tools;
 
 namespace AOC.Day08
