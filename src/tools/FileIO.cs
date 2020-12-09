@@ -95,5 +95,22 @@ namespace AOC.Tools
 
             return list;
         }
+
+        public List<long> ReadAllLong()
+        {
+            var list = new List<long>();
+
+            using StreamReader sr = File.OpenText(FilePath);
+            
+            string line = "";
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                var val = System.Int64.Parse(line);
+                list.Add(val);
+            }
+
+            return list;
+        }
     }
 }
